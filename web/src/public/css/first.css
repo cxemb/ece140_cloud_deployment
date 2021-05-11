@@ -181,6 +181,11 @@
     font-size: calc(1.2rem + 1.4vw);
     padding: var(--padding-lg) var(--padding-xxl);
   }
+
+  .btn.large.temp {
+      align-items: center;
+  }
+
   .btn.outline {
     background: rgba(240, 239, 234, 1);
     border: 1px solid var(--dark-color);
