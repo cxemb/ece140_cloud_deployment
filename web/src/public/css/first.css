@@ -52,6 +52,9 @@
     margin: 0px 1.5rem;
     color: #ccc;
   }
+  .hero wk6 {
+      text-align: center;
+  }
   h1 {
     font-size: calc(1rem + 3.5vw);
     background-color: var(--accent-color);
