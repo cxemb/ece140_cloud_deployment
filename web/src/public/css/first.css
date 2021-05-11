@@ -195,7 +195,7 @@
   }
   .btn.warning {
     background: var(--warning-color);
-    color: white;
+    color: rgb(2, 5, 20);
   }
   .btn.pill {
     border-radius: var(--rounded-radius);
