@@ -21,5 +21,53 @@
       - Chaztine Embucado
     </div>
 
+    <section class='grid'>
+      <div class="column">
+      <city>Welcome to the guestbook!</city>
+          <table>
+              <thead>
+                  <tr>
+                      <th>name</th>
+                      <th>email</th>
+                      <th>comment</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  {% for guest in guests %}
+                  <tr>
+                      <td>{{guest.name}}</td>
+                      <td>{{guest.email}}</td>
+                      <td>{{guest.comment}}</td>
+                  </tr>
+                  {% endfor %}
+              </tbody>
+          </table>
+      </div>
+      <div class="column">
+
+          <a href="/" class="button">BACK HOME</a>
+
+      <h2>Want to add yourself to the guestbook?</h2>
+      <h3>(Opens a new tab to home page when you press "Submit")</h3>
+          <!-- add form -->
+          <form name="add" method="post" action="/add_guest" target="/welcome">
+              <p><label for="name">name:</label></p>
+              <p><input type="text" name="name"></p>
+              <p><label for="email">email:</label></p>
+              <p><input type="text" name="email"></p>
+              <p><label for="comment">comment:</label></p>
+              <p><input type="text" name="comment"></p>
+              <p><input type="submit" value="SUBMIT"></p>
+          </form>
+      </div>
+    </section>
+
+    <section>
+      <form action="cv.html">
+        <button type="submit">cv</button>
+      </form>
+    </section>
+
   </body>
+
 </html>
