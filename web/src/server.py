@@ -16,6 +16,10 @@ db_pass = os.environ['MYSQL_PASSWORD']
 db_name = os.environ['MYSQL_DATABASE']
 db_host = os.environ['MYSQL_HOST']
 
+personalK = ('first_name', 'last_name', 'email')
+educationK = ('school', 'degree', 'major', 'date')
+projectK = ('title', 'description', 'link', 'img_src')
+
 def get_home(req):
   # Connect to the database and retrieve the guests
   db = mysql.connect(host=db_host, database=db_name, user=db_user, passwd=db_pass)
