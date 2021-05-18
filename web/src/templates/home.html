@@ -10,7 +10,6 @@
     <title>-- under construction --</title>
     <meta name="author" content="Chaztine Embucado">
     <meta name="description" content="ECE140B Week 6 Deliverable">
-
     <link rel="stylesheet" type="text/css" href="css/first.css">
   </head>
 
@@ -57,14 +56,43 @@
               <p><input type="text" name="email"></p>
               <p><label for="comment">comment:</label></p>
               <p><input type="text" name="comment"></p>
-              <p><input type="submit" value="SUBMIT"></p>
+              <p>
+                <div class="buttn bPlan" onclick="hidePlan()">
+                  <input type="submit" value="SUBMIT">
+                </div>
+              </p>
           </form>
+      </div>
+      <div id="planDiv">
+        "thank you for visiting"
       </div>
     </section>
 
     <section>
       <a href="/get_cv" class="button">cv</a>
     </section>
+
+    <script>
+      document.addEventListener("click",function(event) {
+        console.log("click!");
+        var buttPlan = document.querySelector(".bPlan");
+        var P = document.getElementById("planDiv");
+
+        function showPlan() {
+        P.style.display = "block";
+        }
+
+        function hidePlan() {
+            P.style.display = "none";
+        }
+
+        buttPlan.addEventListener("click",function(event) {
+        showPlan();
+        console.log("showing plan");
+        });
+        
+        });
+    </script>
 
   </body>
 

@@ -44,8 +44,32 @@ def add_guest(req):
   cursor.execute(query, values)
   db.commit()
   db.close()
-  
+
   return render_to_response('templates/home.html', {}, request=req)
+
+def get_avatar(req):
+    return{"image_src": "143.198.59.27C:pics\mclaren-mcl35m-with-gulf-liver.jpg"}
+
+#def get_personal(req):
+#    db = mysql.connect(host=db_host, database=db_name, user=db_user, passwd=db_pass)
+#    cursor = db.cursor()
+#    cursor.execute("select first_name, last_name, email from personal;")
+#    records = cursor.fetchone()
+#    db.close()
+
+#def get_education(req):
+#    db = mysql.connect(host=db_host, database=db_name, user=db_user, passwd=db_pass)
+#    cursor = db.cursor()
+#    cursor.execute("select school, degree, major, date from education;")
+#    records = cursor.fetchone()
+#    db.close()
+
+#def get_project(req):
+#    db = mysql.connect(host=db_host, database=db_name, user=db_user, passwd=db_pass)
+#    cursor = db.cursor()
+#    cursor.execute("select title, description, link, image_src, team from project;")
+#    records = cursor.fetchone()
+#    db.close()
 
 ''' Route Configurations '''
 if __name__ == '__main__':
@@ -61,9 +85,29 @@ if __name__ == '__main__':
   config.add_route('get_cv', '/get_cv')
   config.add_view(get_cv, route_name='get_cv')
 
-  # Route to add guests
+  # route to add guests
   config.add_route('add_guest', '/add_guest')
   config.add_view(add_guest, route_name='add_guest')
+
+  # route to get guests
+  #config.add_route('get_guest', '/get_guest')
+  #config.add_view(get_guest, route_name='get_guest')
+
+  # route to get avatar
+  config.add_route('get_avatar', '/get_avatar')
+  config.add_view(get_avatar, route_name='get_avatar', renderer='json')
+
+  # route to get personal
+  #config.add_route('get_personal', '/get_personal')
+  #config.add_view(get_personal, route_name='get_personal', renderer='json') 
+
+  # route to get education
+  #config.add_route('get_education', '/get_education')
+  #config.add_view(get_education, route_name='get_education', renderer='json')
+
+  # route to get project
+  #config.add_route('get_project', '/get_project')
+  #config.add_view(get_project, route_name='get_project', renderer='json')  
 
   config.add_static_view(name='/', path='./public', cache_max_age=3600)
 
