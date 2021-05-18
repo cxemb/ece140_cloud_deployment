@@ -20,8 +20,8 @@ cursor.execute("drop table if exists Users;")
 
 # Create a TStudents table (wrapping it in a try-except is good practice)
 try:
-  cursor.execute("""
-    CREATE TABLE Users (
+  cursor.execute(
+    CREATE TABLE guestbook (
       id          integer  AUTO_INCREMENT PRIMARY KEY,
       first_name  VARCHAR(30) NOT NULL,
       last_name   VARCHAR(30) NOT NULL,
@@ -29,7 +29,7 @@ try:
       password    VARCHAR(20) NOT NULL,
       created_at  TIMESTAMP
     );
-  """)
+  )
 except:
   print("Users table already exists. Not recreating it.")
 
