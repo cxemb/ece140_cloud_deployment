@@ -32,7 +32,7 @@
                   </tr>
               </thead>
               <tbody>
-                  {% for guest in guests %}
+                  {% for guest in guestbook %}
                   <tr>
                       <td>{{guest.name}}</td>
                       <td>{{guest.email}}</td>
@@ -49,51 +49,49 @@
       <h2>Want to add yourself to the guestbook?</h2>
       <h3>(Opens a new tab to home page when you press "Submit")</h3>
           <!-- add form -->
-          <form name="add" method="post" action="/add_guest" target="/welcome">
-              <p><label for="name">name:</label></p>
-              <p><input type="text" name="name"></p>
+          <form name="add" method="post" action="/welcome" target="/add_guest">
+              <p><label for="first_name">first name:</label></p>
+              <p><input type="text" name="first_name"></p>
+              <p><label for="last_name">last name:</label></p>
+              <p><input type="text" name="last_name"></p>
               <p><label for="email">email:</label></p>
               <p><input type="text" name="email"></p>
-              <p><label for="comment">comment:</label></p>
-              <p><input type="text" name="comment"></p>
               <p>
-                <div class="buttn bPlan" onclick="hidePlan()">
                   <input type="submit" value="SUBMIT">
-                </div>
               </p>
           </form>
-      </div>
-      <div id="planDiv">
-        "thank you for visiting"
       </div>
     </section>
 
     <section>
       <a href="/get_cv" class="button">cv</a>
+      <a href="/get_personal" class="button">personal</a>
     </section>
 
-    <script>
-      document.addEventListener("click",function(event) {
-        console.log("click!");
-        var buttPlan = document.querySelector(".bPlan");
-        var P = document.getElementById("planDiv");
-
-        function showPlan() {
-        P.style.display = "block";
-        }
-
-        function hidePlan() {
-            P.style.display = "none";
-        }
-
-        buttPlan.addEventListener("click",function(event) {
-        showPlan();
-        console.log("showing plan");
-        });
-        
-        });
-    </script>
-
+    <table>
+      <thead>
+        <tr>
+          <th class='small'> First Name </th>
+          <th class='medium'> Last Name </th>
+          <th class='large'> Email </th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for guest in guestbook %}
+        <tr>
+          <td> {{guest[0]}} </td>
+          <td> {{guest[1]}} </td>
+          <td> {{guest[2]}} </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
   </body>
+
+  <script>
+    document.addEventListener("click",function(event) {
+      console.log("click!");
+      });
+  </script>
 
 </html>

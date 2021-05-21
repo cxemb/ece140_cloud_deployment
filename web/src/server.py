@@ -21,20 +21,24 @@ educationK = ('school', 'degree', 'major', 'date')
 projectK = ('title', 'description', 'link', 'img_src')
 
 def get_home(req):
-  # Connect to the database and retrieve the guests
+  # Connect to the database and retrieve the guestbook
   db = mysql.connect(host=db_host, database=db_name, user=db_user, passwd=db_pass)
   cursor = db.cursor()
-  cursor.execute("select first_name, last_name, email from Users;")
+  cursor.execute("select first_name, last_name, email from Guestbook;")
   records = cursor.fetchall()
   db.close()
+  return render_to_response('templates/home.html', {'guestbook': records}, request=req)
 
-  return render_to_response('templates/home.html', {'guests': records}, request=req)
-
-#pages = ["cv"]
+def welcome(req):
+  # Connect to the database and retrieve the guestbook
+  db = mysql.connect(host=db_host, database=db_name, user=db_user, passwd=db_pass)
+  cursor = db.cursor()
+  cursor.execute("select first_name, last_name, email from Guestbook;")
+  records = cursor.fetchall()
+  db.close()
+  return render_to_response('templates/home.html', {'guestbook': records}, request=req)
 
 def get_cv(req):
-  #pg_id = int(req.matchdict['pages'])
-  #data = {'pages':pages[pg_id]}
   return render_to_response('templates/cv.html', {}, request=req)
 
 def add_guest(req):
@@ -42,8 +46,8 @@ def add_guest(req):
 
   db = mysql.connect(host=db_host, database=db_name, user=db_user, passwd=db_pass)
   cursor = db.cursor()
-  query = "INSERT INTO guestbook (first_name, last_name, email, comment) VALUES (%s, %s, %s)"
-  values = [new_guest['first_name'], new_guest['last_name'], new_guest['email'], new_guest['comment']]
+  query = "INSERT INTO guestbook (first_name, last_name, email) VALUES (%s, %s, %s)"
+  values = [new_guest['first_name'], new_guest['last_name'], new_guest['email']]
 
   cursor.execute(query, values)
   db.commit()
@@ -52,14 +56,15 @@ def add_guest(req):
   return render_to_response('templates/home.html', {}, request=req)
 
 def get_avatar(req):
-    return{"image_src": "143.198.59.27C:pics\mclaren-mcl35m-with-gulf-liver.jpg"}
+  return {"image_src": "143.198.59.27/pics/mclaren-mcl35m-with-gulf-liver.jpg"}
 
-#def get_personal(req):
-#    db = mysql.connect(host=db_host, database=db_name, user=db_user, passwd=db_pass)
-#    cursor = db.cursor()
-#    cursor.execute("select first_name, last_name, email from personal;")
-#    records = cursor.fetchone()
-#    db.close()
+def get_personal(req):
+  db = mysql.connect(host=db_host, database=db_name, user=db_user, passwd=db_pass)
+  cursor = db.cursor()
+  cursor.execute("select first_name, last_name, email from personal;")
+  records = cursor.fetchall()
+  db.close()
+  return render_to_response('templates/personal.html', {'personal': records}, request=req)
 
 #def get_education(req):
 #    db = mysql.connect(host=db_host, database=db_name, user=db_user, passwd=db_pass)
@@ -89,6 +94,10 @@ if __name__ == '__main__':
   config.add_route('get_cv', '/get_cv')
   config.add_view(get_cv, route_name='get_cv')
 
+  # route for welcome
+  config.add_route('welcome', '/welcome')
+  config.add_view(welcome, route_name='welcome')
+
   # route to add guests
   config.add_route('add_guest', '/add_guest')
   config.add_view(add_guest, route_name='add_guest')
@@ -102,8 +111,8 @@ if __name__ == '__main__':
   config.add_view(get_avatar, route_name='get_avatar', renderer='json')
 
   # route to get personal
-  #config.add_route('get_personal', '/get_personal')
-  #config.add_view(get_personal, route_name='get_personal', renderer='json') 
+  config.add_route('get_personal', '/get_personal')
+  config.add_view(get_personal, route_name='get_personal', renderer='json') 
 
   # route to get education
   #config.add_route('get_education', '/get_education')

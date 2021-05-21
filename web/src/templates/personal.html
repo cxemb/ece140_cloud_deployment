@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+    <body>
+        <table>
+        <thead>
+          <tr>
+            <th class='small'> First Name </th>
+            <th class='medium'> Last Name </th>
+            <th class='large'> Email </th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for person in personal %}
+          <tr>
+            <td> {{person[0]}} </td>
+            <td> {{person[1]}} </td>
+            <td> {{person[2]}} </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </body>
+</html>
