@@ -108,7 +108,7 @@ if __name__ == '__main__':
 
   # route to get avatar
   config.add_route('get_avatar', '/get_avatar')
-  config.add_view(get_avatar, route_name='get_avatar', renderer='json')
+  config.add_view(get_avatar, route_name='get_avatar', request_method='GET', renderer='json')
 
   # route to get personal
   config.add_route('get_personal', '/get_personal')
