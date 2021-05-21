@@ -56,7 +56,7 @@ def add_guest(req):
   return render_to_response('templates/home.html', {}, request=req)
 
 def get_avatar(req):
-  return {"image_src": "143.198.59.27/pics/mclaren-mcl35m-with-gulf-liver.jpg"}
+  return {"image_src": "143.198.59.27/pics/mclarengulf.jpg"}
 
 def get_personal(req):
   db = mysql.connect(host=db_host, database=db_name, user=db_user, passwd=db_pass)
