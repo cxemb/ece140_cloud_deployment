@@ -9,15 +9,89 @@
     <!-- Page Info -->
     <title>-- under construction --</title>
     <meta name="author" content="Chaztine Embucado">
-    <meta name="description" content="ECE140B Week 7 Deliverable">
+    <meta name="description" content="pls work lmao">
 
-    <link rel="stylesheet" type="text/css" href="css/first.css">
+    <link rel="stylesheet" type="text/css" href="css/cv.css">
+    <script src="cv.js"></script>
   </head>
 
   <body>
-    <div class='btn largetemp'>
-      cv coming soon (:
-    </div>
+        <div class='btn largetemp'>
+          cv coming soon (:
+        </div>
+        
+    <sidebar>
+      <a><strong>References</strong></a>
+      <a href="https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_expanding_grid">Expanding Grid ( Java)</a>
+      <a href="https://www.w3schools.com/css/css_font.asp">Fonts</a>
+      <a href="https://www.w3schools.com/howto/howto_css_sidebar_responsive.asp">Sidebar</a>
+      <a><strong>Personal Links</strong></a>
+      <a href="https://sedsucsd.org/">SEDS</a>
+      <a href="www.linkedin.com/in/chaztinee">LinkedIn</a>
+      <a href="https://vsco.co/39-/gallery">VSCO</a>
+    </sidebar>
+
+    <city>
+      Chaztine E.
+    </city>
+
+    <img src="https://whszephyr.com/wp-content/uploads/2018/04/cha-project-900x595.jpg" class="center">
+
+
+
+    <mid>
+      Click the boxes and scroll down for more details!
+    </mid>
+      
+    <!--<section class='grid'> 
+      <div>
+        <h2>
+          Career Interests
+        </h2>
+        
+      </div>
+      <div>
+        <h2>
+          Personal Interests
+        </h2>
+      </div>
+    </section>-->
+
+    <section class='grid'>
+        <div class="column" onclick="openTab('b1')">
+          <h2>
+            Career Interests
+          </h2>
+        </div>
+        <div class="column" onclick="openTab('b2')">
+          <h2>
+            Personal Interests
+          </h2>
+        </div>
+      </div>
+    </section>
+
+    <move>
+      <div id="b1" class="containerTab" style="display:none;background:#3A5769">
+        <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+        <h2>Defense Industry Engineer</h2>
+        <p>
+          I was in AFROTC (Air Force Reserve Officer Corps) for a year. As an Electrical Engineering major I developed an interest in the defense industry. I am also a part of SEDS (Students for the Exploration and Development of Space) here at UCSD, where I have grown a more specific interest in avionics!
+        </p>
+      </div>
+
+      <div id="b2" class="containerTab" style="display:none;background:#3A5769">
+        <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+        <h2>Producing/Graphic Design</h2>
+        <p>I love music, and I am trying to learn more about music theory in order to make the kind of songs I want. I have also held a couple media/public affairs positions outside of academics, which I enjoy.</p>
+      </div>
+
+      <div id="b3" class="containerTab" style="display:none;background:red">
+        <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+        <h2>Box 3</h2>
+        <p>Lorem ipsum dolor sit amet, te quo doctus abhorreant, et pri deleniti intellegat, te sanctus inermis ullamcorper nam. Ius error diceret deseruisse ad</p>
+      </div>
+    </move>
   </body>
 </html>
 
