@@ -109,4 +109,36 @@ cursor.execute("select * from Education;")
 print('---------- DATABASE INITIALIZED ----------')
 [print(z) for z in cursor]
 
+# ===================================================================== Project ================
+# # CAUTION!!! CAUTION!!! CAUTION!!! CAUTION!!! CAUTION!!!
+cursor.execute("drop table if exists Project;")
+
+try:
+  cursor.execute("""
+    CREATE TABLE Project (
+      id          integer  AUTO_INCREMENT PRIMARY KEY,
+      title  VARCHAR(30) NOT NULL,
+      description   VARCHAR(50) NOT NULL,
+      link       VARCHAR(50) NOT NULL,
+      image_src       VARCHAR(50) NOT NULL,
+      team       VARCHAR(50) NOT NULL,
+      created_at  TIMESTAMP
+    );
+  """)
+except:
+  print("Project table already exists. Not recreating it.")
+
+# Insert Records
+query = "insert into Project (title, description, link, image_src, team) values (%s, %s, %s, %s, %s)"
+values = [
+  ('BallBuddy','soccer ball with data!','TBD', 'TBD', 'smartspherez'),
+]
+cursor.executemany(query, values)
+db.commit()
+
+# Selecting Records
+cursor.execute("select * from Project;")
+print('---------- DATABASE INITIALIZED ----------')
+[print(p) for p in cursor]
+
 db.close()
