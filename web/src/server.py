@@ -61,7 +61,7 @@ def get_avatar(req):
 def get_personal(req):
   db = mysql.connect(host=db_host, database=db_name, user=db_user, passwd=db_pass)
   cursor = db.cursor()
-  cursor.execute("select first_name, last_name, email from personal;")
+  cursor.execute("select first_name, last_name, email from Personal;")
   records = cursor.fetchall()
   db.close()
   return render_to_response('templates/personal.html', {'personal': records}, request=req)

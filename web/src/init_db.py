@@ -60,7 +60,7 @@ try:
       last_name   VARCHAR(30) NOT NULL,
       email       VARCHAR(50) NOT NULL,
       created_at  TIMESTAMP
-    );
+
   """)
 except:
   print("Personal table already exists. Not recreating it.")
