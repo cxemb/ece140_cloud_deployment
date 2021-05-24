@@ -15,10 +15,10 @@ db_host = os.environ['MYSQL_HOST'] # must 'localhost' when running this script o
 db = mysql.connect(user=db_user, password=db_pass, host=db_host, database=db_name)
 cursor = db.cursor()
 
-# # CAUTION!!! CAUTION!!! CAUTION!!! CAUTION!!! CAUTION!!! CAUTION!!! CAUTION!!!
+# ===================================================================== Guestbook ==============
+# # CAUTION!!! CAUTION!!! CAUTION!!! CAUTION!!! CAUTION!!!
 cursor.execute("drop table if exists Guestbook;")
 
-# Create a TStudents table (wrapping it in a try-except is good practice)
 try:
   cursor.execute("""
     CREATE TABLE Guestbook (
@@ -48,9 +48,10 @@ cursor.execute("select * from Guestbook;")
 print('---------- DATABASE INITIALIZED ----------')
 [print(x) for x in cursor]
 
-# # CAUTION!!! CAUTION!!! CAUTION!!! CAUTION!!! CAUTION!!! CAUTION!!! CAUTION!!!
+# ===================================================================== Personal ===============
+# # CAUTION!!! CAUTION!!! CAUTION!!! CAUTION!!! CAUTION!!!
 cursor.execute("drop table if exists Personal;")
-# Create a TStudents table (wrapping it in a try-except is good practice)
+
 try:
   cursor.execute("""
     CREATE TABLE Personal (
@@ -76,5 +77,36 @@ db.commit()
 cursor.execute("select * from Personal;")
 print('---------- DATABASE INITIALIZED ----------')
 [print(y) for y in cursor]
+
+# ===================================================================== Education ==============
+# # CAUTION!!! CAUTION!!! CAUTION!!! CAUTION!!! CAUTION!!!
+cursor.execute("drop table if exists Education;")
+
+try:
+  cursor.execute("""
+    CREATE TABLE Education (
+      id          integer  AUTO_INCREMENT PRIMARY KEY,
+      school  VARCHAR(50) NOT NULL,
+      degree   VARCHAR(30) NOT NULL,
+      major       VARCHAR(50) NOT NULL,
+      date       VARCHAR(50) NOT NULL,
+      created_at  TIMESTAMP
+    );
+  """)
+except:
+  print("Education table already exists. Not recreating it.")
+
+# Insert Records
+query = "insert into Education (school, degree, major, date) values (%s, %s, %s, %s)"
+values = [
+  ('Univeristy of California, San Diego','B.S.','Electrical Engineering', '2022'),
+]
+cursor.executemany(query, values)
+db.commit()
+
+# Selecting Records
+cursor.execute("select * from Education;")
+print('---------- DATABASE INITIALIZED ----------')
+[print(z) for z in cursor]
 
 db.close()

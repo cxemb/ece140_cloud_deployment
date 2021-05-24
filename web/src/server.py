@@ -66,12 +66,13 @@ def get_personal(req):
   db.close()
   return render_to_response('templates/personal.html', {'personal': records}, request=req)
 
-#def get_education(req):
-#    db = mysql.connect(host=db_host, database=db_name, user=db_user, passwd=db_pass)
-#    cursor = db.cursor()
-#    cursor.execute("select school, degree, major, date from education;")
-#    records = cursor.fetchone()
-#    db.close()
+def get_education(req):
+  db = mysql.connect(host=db_host, database=db_name, user=db_user, passwd=db_pass)
+  cursor = db.cursor()
+  cursor.execute("select school, degree, major, date from Education;")
+  records = cursor.fetchall()
+  db.close()
+  return render_to_response('templates/education.html', {'education': records}, request=req)
 
 #def get_project(req):
 #    db = mysql.connect(host=db_host, database=db_name, user=db_user, passwd=db_pass)
@@ -115,8 +116,8 @@ if __name__ == '__main__':
   config.add_view(get_personal, route_name='get_personal', renderer='json') 
 
   # route to get education
-  #config.add_route('get_education', '/get_education')
-  #config.add_view(get_education, route_name='get_education', renderer='json')
+  config.add_route('get_education', '/get_education')
+  config.add_view(get_education, route_name='get_education', renderer='json')
 
   # route to get project
   #config.add_route('get_project', '/get_project')

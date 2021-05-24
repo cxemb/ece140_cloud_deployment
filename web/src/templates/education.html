@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+    <body>
+        <table>
+        <thead>
+          <tr>
+            <th> school </th>
+            <th> degree </th>
+            <th> major </th>
+            <th> datte </th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for edu in education %}
+          <tr>
+            <td> {{edu[0]}} </td>
+            <td> {{edu[1]}} </td>
+            <td> {{edu[2]}} </td>
+            <td> {{edu[3]}} </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </body>
+</html>
