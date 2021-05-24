@@ -12,7 +12,7 @@
     <meta name="description" content="pls work lmao">
 
     <link rel="stylesheet" type="text/css" href="css/cv.css">
-    <script src="cv.js"></script>
+    <!-- <script src="cv.js"></script> -->
   </head>
 
   <body>
@@ -76,7 +76,7 @@
         <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
         <h2>Defense Industry Engineer</h2>
         <p>
-          I was in AFROTC (Air Force Reserve Officer Corps) for a year. As an Electrical Engineering major I developed an interest in the defense industry. I am also a part of SEDS (Students for the Exploration and Development of Space) here at UCSD, where I have grown a more specific interest in avionics!
+          I was in AFROTC (Air Force Reserve Officer Training Corps) for a year. As an Electrical Engineering major I developed an interest in the defense industry. I am also a part of SEDS (Students for the Exploration and Development of Space) here at UCSD, where I have grown a more specific interest in avionics!
         </p>
       </div>
 
@@ -93,5 +93,15 @@
       </div>
     </move>
   </body>
+  <script>
+    function openTab(tabName) {
+        var i, x;
+        x = document.getElementsByClassName("containerTab");
+        for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+        }
+        document.getElementById(tabName).style.display = "block";
+    }
+  </script>
 </html>
 
