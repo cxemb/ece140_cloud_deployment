@@ -131,7 +131,7 @@ except:
 # Insert Records
 query = "insert into Project (title, description, link, image_src, team) values (%s, %s, %s, %s, %s)"
 values = [
-  ('BallBuddy','soccer ball with data!','TBD', 'TBD', 'smartspherez'),
+  ('BallBuddy','soccer ball with data!','/get_cv', 'TBD', 'smartspherez'),
 ]
 cursor.executemany(query, values)
 db.commit()
