@@ -49,7 +49,7 @@ print('---------- DATABASE INITIALIZED ----------')
 [print(x) for x in cursor]
 
 # # CAUTION!!! CAUTION!!! CAUTION!!! CAUTION!!! CAUTION!!! CAUTION!!! CAUTION!!!
-cursor.execute("drop table if exists Personal;")
+#cursor.execute("drop table if exists Personal;")
 
 # Create a TStudents table (wrapping it in a try-except is good practice)
 try:
