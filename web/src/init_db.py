@@ -16,7 +16,7 @@ db = mysql.connect(user=db_user, password=db_pass, host=db_host, database=db_nam
 cursor = db.cursor()
 
 # # CAUTION!!! CAUTION!!! CAUTION!!! CAUTION!!! CAUTION!!! CAUTION!!! CAUTION!!!
-#cursor.execute("drop table if exists Guestbook;")
+cursor.execute("drop table if exists Guestbook;")
 
 # Create a TStudents table (wrapping it in a try-except is good practice)
 try:
@@ -49,8 +49,7 @@ print('---------- DATABASE INITIALIZED ----------')
 [print(x) for x in cursor]
 
 # # CAUTION!!! CAUTION!!! CAUTION!!! CAUTION!!! CAUTION!!! CAUTION!!! CAUTION!!!
-#cursor.execute("drop table if exists Personal;")
-
+cursor.execute("drop table if exists Personal;")
 # Create a TStudents table (wrapping it in a try-except is good practice)
 try:
   cursor.execute("""
@@ -60,7 +59,7 @@ try:
       last_name   VARCHAR(30) NOT NULL,
       email       VARCHAR(50) NOT NULL,
       created_at  TIMESTAMP
-
+    );
   """)
 except:
   print("Personal table already exists. Not recreating it.")
