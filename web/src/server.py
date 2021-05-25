@@ -36,7 +36,10 @@ def welcome(req):
   cursor.execute("select first_name, last_name, email from Guestbook;")
   records = cursor.fetchall()
   db.close()
-  return render_to_response('templates/home.html', {'guestbook': records}, request=req)
+  return render_to_response('templates/welcome.html', {'guestbook': records}, request=req)
+
+def about(req):
+  return render_to_response('template/aboutus.html', {}, request=req)
 
 def get_cv(req):
   return render_to_response('templates/cv.html', {}, request=req)
@@ -56,7 +59,10 @@ def add_guest(req):
   return render_to_response('templates/home.html', {}, request=req)
 
 def get_avatar(req):
-  return {"image_src": "/pics/mclarengulf.jpg"} # do i have to specify localhost:80 or 143.198.59.27?
+  return {"image_src": "/pics/mclarengulf.jpg"} 
+
+def resume(req):
+  return render_to_response('https://drive.google.com/file/d/1GAZyKmAbpkaBoUzndk0JlhPYfHoogRXj/view', {}, request=req)
 
 def get_personal(req):
   db = mysql.connect(host=db_host, database=db_name, user=db_user, passwd=db_pass)
@@ -100,6 +106,10 @@ if __name__ == '__main__':
   config.add_route('welcome', '/welcome')
   config.add_view(welcome, route_name='welcome')
 
+  # route for about
+  config.add_route('about', '/about')
+  config.add_view(about, route_name='about')
+
   # route to add guests
   config.add_route('add_guest', '/add_guest')
   config.add_view(add_guest, route_name='add_guest')
@@ -119,6 +129,10 @@ if __name__ == '__main__':
   # route to get education
   config.add_route('get_education', '/get_education')
   config.add_view(get_education, route_name='get_education', renderer='json')
+
+  # route to get resume
+  config.add_route('resume', '/resume')
+  config.add_view(resume, route_name='resume', renderer='resume')
 
   # route to get project
   config.add_route('get_project', '/get_project')

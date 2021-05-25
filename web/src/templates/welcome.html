@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Page Info -->
+    <title>-- under construction --</title>
+    <meta name="author" content="Chaztine Embucado">
+    <meta name="description" content="ECE140B Week 6 Deliverable">
+    <link rel="stylesheet" type="text/css" href="css/first.css">
+    <!-- <script>"/css/home.js"</script> -->
+  </head>
+
+  <body>
+
+    <section class='grid'>
+      <div class="column">
+      <city>Welcome to the guestbook!</city>
+        <table>
+          <thead>
+            <tr>
+              <th> First Name </th>
+              <th> Last Name </th>
+              <th> Email </th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for guest in guestbook %}
+            <tr>
+              <td> {{guest[0]}} </td>
+              <td> {{guest[1]}} </td>
+              <td> {{guest[2]}} </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      <div class="column">
+
+      <h2>Want to add yourself to the guestbook?</h2>
+      <p><label for="firstName">First name:</label></p>
+      <p><input type="text" name="firstName"></p>
+      <p><label for="lastName">Last name:</label></p>
+      <p><input type="text" name="lastName"></p>
+      <p><label for="email">Email:</label></p>
+      <p><input type="text" name="email"></p>
+      <p><label for="comment">Comment:</label></p>
+      <p><input type="text" name="comment"></p>
+      <button id='guest' onclick=buttAlert()>SUBMIT</button>
+      </div>
+    </section>
+  </body>
+
+  <script>
+    function buttAlert() {
+      alert("thanks for visiting, see you soon!");
+    }
+  </script>
+</html>

@@ -11,91 +11,22 @@
     <meta name="author" content="Chaztine Embucado">
     <meta name="description" content="ECE140B Week 6 Deliverable">
     <link rel="stylesheet" type="text/css" href="css/first.css">
+    <!-- <script>"/css/home.js"</script> -->
   </head>
 
   <body>
-
-    <div class='btn largetemp'>
-      coming soon - come back next week! thank you for your patience!
-      - Chaztine Embucado
-    </div>
-
-    <section class='grid'>
-      <div class="column">
-      <city>Welcome to the guestbook!</city>
-          <table>
-              <thead>
-                  <tr>
-                      <th>name</th>
-                      <th>email</th>
-                      <th>comment</th>
-                  </tr>
-              </thead>
-              <tbody>
-                  {% for guest in guestbook %}
-                  <tr>
-                      <td>{{guest.name}}</td>
-                      <td>{{guest.email}}</td>
-                      <td>{{guest.comment}}</td>
-                  </tr>
-                  {% endfor %}
-              </tbody>
-          </table>
-      </div>
-      <div class="column">
-
-          <a href="/" class="button">BACK HOME</a>
-
-      <h2>Want to add yourself to the guestbook?</h2>
-      <h3>(Opens a new tab to home page when you press "Submit")</h3>
-          <!-- add form -->
-          <form name="add" method="post" action="/welcome" target="/add_guest">
-              <p><label for="first_name">first name:</label></p>
-              <p><input type="text" name="first_name"></p>
-              <p><label for="last_name">last name:</label></p>
-              <p><input type="text" name="last_name"></p>
-              <p><label for="email">email:</label></p>
-              <p><input type="text" name="email"></p>
-              <p>
-                  <input type="submit" value="SUBMIT">
-              </p>
-          </form>
-      </div>
-    </section>
-
     <section>
+      <p><a href="/welcome" class="button">welcome! click here to sign in</a></p>
+      <p><a href="/about" class="button">learn more about us</a></p>
       <p><a href="/get_cv" class="button">cv</a></p>
       <p><a href="/get_avatar" class="button">avatar</a></p>
-      <p><a href="/get_personal" class="button">personal</a></p>
-      <p><a href="/pics/mclarengulf.jpg" class="button">werid that this works for the avatar but not route</a></p>
-      <p><a href="/get_education" class="button">education</a></p>
       <p><a href="/get_project" class="button">project</a></p>
     </section>
-
-    <table>
-      <thead>
-        <tr>
-          <th class='small'> First Name </th>
-          <th class='medium'> Last Name </th>
-          <th class='large'> Email </th>
-        </tr>
-      </thead>
-      <tbody>
-        {% for guest in guestbook %}
-        <tr>
-          <td> {{guest[0]}} </td>
-          <td> {{guest[1]}} </td>
-          <td> {{guest[2]}} </td>
-        </tr>
-        {% endfor %}
-      </tbody>
-    </table>
   </body>
 
   <script>
-    document.addEventListener("click",function(event) {
-      console.log("click!");
-      });
+    function buttAlert() {
+      alert("thanks for visiting, see you soon!");
+    }
   </script>
-
 </html>
