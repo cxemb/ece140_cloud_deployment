@@ -39,7 +39,7 @@ def welcome(req):
   return render_to_response('templates/welcome.html', {'guestbook': records}, request=req)
 
 def about(req):
-  return render_to_response('template/aboutus.html', {}, request=req)
+  return render_to_response('templates/aboutus.html', {}, request=req)
 
 def get_cv(req):
   return render_to_response('templates/cv.html', {}, request=req)
