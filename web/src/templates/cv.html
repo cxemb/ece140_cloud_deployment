@@ -23,7 +23,7 @@
     <sidebar>
       <a href="https://sedsucsd.org/">SEDS</a>
       <a href="https://www.linkedin.com/in/chaztinee">LinkedIn</a>
-      <a href="https://vsco.co/39-/gallery">VSCO</a>
+      <!-- <a href="https://vsco.co/39-/gallery">VSCO</a>  -->
       <a href="/get_personal" class="button">personal</a>
       <!-- <a href="/pics/mclarengulf.jpg" class="button">werid that this works for the avatar but not route</a> -->
       <a href="/get_education" class="button">education</a>
@@ -34,7 +34,7 @@
       Chaztine E.
     </city>
 
-    <img src="\get_avatar" class="center">
+    <img src="\pics\mclarengulf.jpg" class="center">
 
 
     <mid>
@@ -86,29 +86,6 @@
         }
         document.getElementById(tabName).style.display = "block";
     }
-
-
-
-    var theURL=`/get_avatar`;
-    fetch(theURL)
-        .then(response => response.json())
-        .then(function() {
-          console.log('update your images...');
-          //Implement your logic here to update the images. There are two primary ways to do this...
-          // 1. Have your server push image data (binary), decode it, and inject into your page (complicated)
-          // 2. Use JS to change image URLS and add query string to end, to force reload of the image(s) (recommended)
-          function screenshotUpdate() {
-            document.getElementById('screenshot.jpg').src = "/pics/mclarengulf.jpg?random="+new Date().getTime();
-            console.log("screenshot updated");
-          }
-          // Make sure that you delay for a little bit of time so the server has time to write the images to the public folder
-          function showDetected() {
-          setTimeout(screenshotUpdate, 2000);
-          }
-
-          showDetected();
-
-        });
 
   </script>
 </html>

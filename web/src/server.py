@@ -62,7 +62,7 @@ def get_avatar(req):
   return {"image_src": "/pics/mclarengulf.jpg"} 
 
 def resume(req):
-  return render_to_response('https://drive.google.com/file/d/1GAZyKmAbpkaBoUzndk0JlhPYfHoogRXj/view', {}, request=req)
+  return render_to_response('templates/resume.html', {}, request=req)
 
 def get_personal(req):
   db = mysql.connect(host=db_host, database=db_name, user=db_user, passwd=db_pass)
