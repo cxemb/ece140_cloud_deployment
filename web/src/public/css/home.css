@@ -165,3 +165,33 @@ move {
   padding-top: 2.5rem;
   padding-bottom: 2.5rem;
 }
+
+.dropbutton {
+  background-color: var(--accent-color);
+  border: 4px outset var(--outline-color);
+  border-radius: var(--corner-radius);
+  color: var(--lightest-text-color);
+  font-size: 30px;
+  padding: 16px;
+  font-family: Rockwell;
+  width: 50%;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.droplinks {
+  display: none;
+  position: absolute;
+}
+
+.dropdown-content a {
+  display: block;
+}
+
+
+.dropdown:hover .droplinks {
+  display: block;
+}
