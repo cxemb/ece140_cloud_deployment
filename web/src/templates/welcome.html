@@ -42,7 +42,7 @@
         </div>
         <div class="column2">
   
-        <h2>Want to add yourself to the guestbook?</h2>
+        <p id="message"><h2>Want to add yourself to the guestbook?</h2></p>
         <p><label for="firstName">First name:</label></p>
         <p><input type="text" name="firstName"></p>
         <p><label for="lastName">Last name:</label></p>
@@ -51,7 +51,7 @@
         <p><input type="text" name="email"></p>
         <p><label for="comment">Comment:</label></p>
         <p><input type="text" name="comment"></p>
-        <button id='guest' onclick=buttAlert()>SUBMIT</button>
+        <button id='guest' onclick='document.getElementById("message").innerHTML="thanks for visiting, see you soon!"'>SUBMIT</button>
         </div>
       </section>
       
