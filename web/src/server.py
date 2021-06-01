@@ -41,7 +41,7 @@ def welcome(req):
 def about(req):
   return render_to_response('templates/aboutus.html', {}, request=req)
 
-def get_cv(req):
+def cv(req):
   return render_to_response('templates/cv.html', {}, request=req)
 
 def add_guest(req):
@@ -58,13 +58,13 @@ def add_guest(req):
 
   return render_to_response('templates/home.html', {}, request=req)
 
-def get_avatar(req):
+def avatar(req):
   return {"image_src": "/pics/mclarengulf.jpg"} 
 
 def resume(req):
   return render_to_response('templates/resume.html', {}, request=req)
 
-def get_personal(req):
+def personal(req):
   db = mysql.connect(host=db_host, database=db_name, user=db_user, passwd=db_pass)
   cursor = db.cursor()
   cursor.execute("select first_name, last_name, email from Personal;")
@@ -72,7 +72,7 @@ def get_personal(req):
   db.close()
   return render_to_response('templates/personal.html', {'personal': records}, request=req)
 
-def get_education(req):
+def education(req):
   db = mysql.connect(host=db_host, database=db_name, user=db_user, passwd=db_pass)
   cursor = db.cursor()
   cursor.execute("select school, degree, major, date from Education;")
@@ -80,7 +80,7 @@ def get_education(req):
   db.close()
   return render_to_response('templates/education.html', {'education': records}, request=req)
 
-def get_project(req):
+def project(req):
   db = mysql.connect(host=db_host, database=db_name, user=db_user, passwd=db_pass)
   cursor = db.cursor()
   cursor.execute("select title, description, link, image_src, team from Project;")
@@ -99,8 +99,8 @@ if __name__ == '__main__':
   config.add_view(get_home, route_name='get_home')
 
   # route for cv
-  config.add_route('get_cv', '/get_cv')
-  config.add_view(get_cv, route_name='get_cv')
+  config.add_route('cv', '/cv')
+  config.add_view(cv, route_name='cv')
 
   # route for welcome
   config.add_route('welcome', '/welcome')
@@ -119,24 +119,24 @@ if __name__ == '__main__':
   #config.add_view(get_guest, route_name='get_guest')
 
   # route to get avatar
-  config.add_route('get_avatar', '/get_avatar')
-  config.add_view(get_avatar, route_name='get_avatar', request_method='GET', renderer='json')
+  config.add_route('avatar', '/avatar')
+  config.add_view(avatar, route_name='avatar', request_method='GET', renderer='json')
 
   # route to get personal
-  config.add_route('get_personal', '/get_personal')
-  config.add_view(get_personal, route_name='get_personal', renderer='json') 
+  config.add_route('personal', '/personal')
+  config.add_view(personal, route_name='personal', renderer='json') 
 
   # route to get education
-  config.add_route('get_education', '/get_education')
-  config.add_view(get_education, route_name='get_education', renderer='json')
+  config.add_route('education', '/education')
+  config.add_view(education, route_name='education', renderer='json')
 
   # route to get resume
   config.add_route('resume', '/resume')
   config.add_view(resume, route_name='resume', renderer='resume')
 
   # route to get project
-  config.add_route('get_project', '/get_project')
-  config.add_view(get_project, route_name='get_project', renderer='json')  
+  config.add_route('project', '/project')
+  config.add_view(project, route_name='project', renderer='json')  
 
   config.add_static_view(name='/', path='./public', cache_max_age=3600)
 

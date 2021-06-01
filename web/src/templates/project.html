@@ -10,16 +10,21 @@
         <meta name="author" content="Chaztine Embucado">
         <meta name="description" content="pls work lmao">
     
-        <link rel="stylesheet" type="text/css" href="css/cv.css">
+        <link rel="stylesheet" type="text/css" href="css/welcome.css">
         <!-- <script src="cv.js"></script> -->
       </head>
     <body>
+
+      <div class="homebox">
+        <a href="/">home</a>
+      </div>
+      
         <table>
         <thead>
           <tr>
             <th> title </th>
             <th> description </th>
-            <th> link </th>
+            <th> more about us </th>
             <th> image_src </th>
             <th> team </th>
           </tr>
@@ -29,13 +34,13 @@
           <tr>
             <td> {{prj[0]}} </td>
             <td> {{prj[1]}} </td>
-            <td> <a href="{{prj[2]}}" class="button">cv for now</a> </td>
+            <td> <a href="{{prj[2]}}" class="button">WIP</a> </td>
             <td> {{prj[3]}} </td>
-            <td> {{prj[4]}} (teammates didn't have URLs yet) </td>
+            <td> {{prj[4]}} </td>
           </tr>
           {% endfor %}
         </tbody>
       </table>
-      <img src="/pics/ia-wireframe.png">
+      <img src="/pics/ia-wireframe.png" width="900">
     </body>
 </html>
