@@ -1,0 +1,203 @@
+:root {
+    --page-color: #0E2F44;
+    --lightest-text-color: aliceblue;
+    --light-text-color: #D7EFFF;
+    --accent-color: #091E2C;
+    --corner-radius: 10px;
+    --big-padding: 1rem;
+    --med-padding: 0.66rem;
+    --outline-color: #93C2CC;
+    --fontie: Rockwell;
+    
+  }
+  
+  body {
+    background-color: var(--page-color);
+    font-family: var(--fontie);
+    color: var(--lightest-text-color);
+    padding: 1rem;
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  
+  /*mid {
+    padding-top: 3rem;
+    display: block;
+    color: #c3cee6;
+    text-align: center;
+  }*/
+  
+  h1 {
+    color: var(--lightest-text-color);
+    font-size: 8rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    background-color: var(--accent-color);
+    padding-bottom: 2rem;
+    text-align: center;
+  }
+  
+  h2 {
+    text-align: center;
+  }
+  
+  h3 {
+    color: var(--lightest-text-color);
+  }
+  
+  
+  th {
+    color: var(--lightest-text-color);
+    padding: 15px;
+    text-align: center;
+    border: 4px outset #93c2cc;
+    border-radius: var(--corner-radius);
+  }
+
+  th, td {
+    text-align:center;
+    padding:5px;
+    width:200px;
+  }
+  
+  a {
+    background-color: var(--accent-color);
+    border-radius: var(--corner-radius);
+    padding: var(--med-padding) var(--big-padding);
+  }
+  
+  /* unvisited link */
+  a:link {
+    color: var(--light-text-color);
+    text-decoration: none;
+  }
+  
+  /* visited link */
+  a:visited {
+    color:seagreen;
+  }
+  
+  /* mouse over link */
+  a:hover {
+    color:steelblue;
+  }
+  
+  .center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    padding: 10px;
+    border: 4px outset #93c2cc;
+    width: 40%;
+  }
+  
+
+  
+  div {
+    padding: 1rem;
+    color: lightblue;
+    width: 80%;
+    text-align: center;
+  }
+  
+  
+  /*.grid {
+    padding: 3rem;
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+  } */
+  
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Closable button inside the container tab */
+  .closebtn {
+    float: right;
+    color: #CEDBE3;
+    font-size: 35px;
+    cursor: pointer;
+  }
+  
+  move {
+    display: block;
+    width: 50%;
+    margin: auto;
+    padding-left: 150px;
+  }
+  
+  .grid {
+      padding: 3rem;
+      display: grid;
+      grid-template-rows: 50px;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 1rem;
+    }
+  
+  /*section {
+    align-items: center;
+  }*/
+  
+  .box11 {
+    color: var(--lightest-text-color);
+    align-self: center;
+    border: 4px outset var(--outline-color);
+    border-radius: var(--corner-radius);
+  }
+  
+  .box12 {
+    color: var(--lightest-text-color);
+    align-self: center;
+    border: 4px outset var(--outline-color);
+    border-radius: var(--corner-radius);
+  }
+  
+  .box21 {
+    align-self: center;
+  }
+  
+  .box22 {
+    align-self: center;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
+
+h2 {
+  color: var(--lightest-text-color);
+  border: 4px outset var(--outline-color);
+  border-radius: var(--corner-radius);
+  padding: .5rem;
+}
+
+input {
+  background-color: var(--lightest-text-color);
+  border-radius: 5px;
+}
+
+button {
+  font-family: var(--fontie);
+  font-size: 20px;
+  border-radius: 5px;
+}
+
+.alert {
+  padding: 20px;
+  background-color: #f44336; /* Red */
+  color: white;
+  margin-bottom: 15px;
+}
+
+.homebox {
+    margin-top: 5%;
+    margin-left: 50%;
+}
+
+.column2 {
+    padding-top: 6px;
+    margin: 0px;
+  }
