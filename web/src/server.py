@@ -7,7 +7,7 @@ from pyramid.response import Response
 import mysql.connector as mysql
 import os
 #import requests
-#import json
+import json
 
 GUEST_DB_FILE_PATH = './guest_database.txt'    # Location of guest DB relative to server.py
 
@@ -87,6 +87,15 @@ def project(req):
   records = cursor.fetchall()
   db.close()
   return render_to_response('templates/project.html', {'project': records}, request=req)
+
+def some_route_returning_json():
+  # other stuff happening in your route
+  SOME_DATA_ARRAY = #stuff you wish to return
+
+  # form a Response object and update the heder to allow cross-site access
+  response = Response(body=json.dumps(SOME_DATA_ARRAY))
+  response.headers.update({'Access-Control-Allow-Origin': '*',})
+  return response
 
 ''' Route Configurations '''
 if __name__ == '__main__':
