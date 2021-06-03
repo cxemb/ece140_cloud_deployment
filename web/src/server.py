@@ -90,7 +90,7 @@ def project(req):
 
 def some_route_returning_json():
   # other stuff happening in your route
-  SOME_DATA_ARRAY = #stuff you wish to return
+  SOME_DATA_ARRAY = ("help")
 
   # form a Response object and update the heder to allow cross-site access
   response = Response(body=json.dumps(SOME_DATA_ARRAY))
