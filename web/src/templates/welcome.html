@@ -11,7 +11,7 @@
     <meta name="author" content="Chaztine Embucado">
     <meta name="description" content="ECE140B Week 6 Deliverable">
     <link rel="stylesheet" type="text/css" href="css/welcome.css">
-    <!-- <script>"/css/home.js"</script> -->
+    <script>"/js/help.js"</script>
   </head>
 
   <body>
@@ -42,15 +42,15 @@
         </div>
         <div class="column2">
   
-        <p id="message"><h2>Want to add yourself to the guestbook?</h2></p>
-        <p><label for="firstName">First name:</label></p>
-        <p><input type="text" name="firstName"></p>
-        <p><label for="lastName">Last name:</label></p>
-        <p><input type="text" name="lastName"></p>
+        <p id="message"><h2>Want ato add yourself to the guestbook?</h2></p>
+        <p><label for="first_name">First name:</label></p>
+        <p><input type="text" name="first_name" id="first_name"></p>
+        <p><label for="last_name">Last name:</label></p>
+        <p><input type="text" name="last_name" id="last_name"></p>
         <p><label for="email">Email:</label></p>
-        <p><input type="text" name="email"></p>
+        <p><input type="text" name="email" id="email"></p>
         <p><label for="comment">Comment:</label></p>
-        <p><input type="text" name="comment"></p>
+        <p><input type="text" name="comment" id="comment"></p>
         <button id='guest' onclick='document.getElementById("message").innerHTML="thanks for visiting, see you soon!"'>SUBMIT</button>
         </div>
       </section>
@@ -58,6 +58,37 @@
     </body>
   
     <script>
+  //     document.addEventListener("DOMContentLoaded",(event) => {
+  //     console.log('new content!')
+  //     function addGuest() {
+  //         var gFName = document.getElementById("first_name").value;
+  //         var gLName = document.getElementById("last_name").value;
+  //         var gEmail = document.getElementById("email").value;
+  //         var gComment = document.getElementById("comment").value;
+
+  //         var gNew =  '{"first_name": ' + '"' +gFName+ '"' + ', "last_name": ' + '"'+ gLName + '"' + ', "email": ' + '"'+ gEmail + '"' + ', "comment": ' + '"'+ gComment + '"' + '}';
+          
+  //         console.log(gNew);
+          
+  //         fetch('http://localhost/add_guest', {
+  //             method: 'POST',
+  //             headers: {
+  //                 'Content-Type': 'application/json',
+  //             },
+  //             body: JSON.stringify(gNew),
+  //         })
+  //         .then(response => response.json())
+  //         .then(gNew => {
+  //         console.log('Success:', gNew);
+  //         })
+  //         .catch((error) => {
+  //         console.error('Error:', error);
+  //         });
+  //     }
+  //     var submitGuest = document.getElementById("guest");
+  //     submitGuest.addEventListener('click', addGuest);    
+  // });
+
       function buttAlert() {
         alert("thanks for visiting, see you soon!");
       }

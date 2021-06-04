@@ -46,17 +46,46 @@ def cv(req):
 
 def add_guest(req):
   new_guest = req.json_body
+  print(new_guest)
+  j = json.loads(new_guest)
+  newFirstName = j["first_name"]
+  newLastName = j["last_name"]
+  newEmail = j["email"]
+  newComment=j["comment"]
+  #newTime=j["created_at"]
+  print(newFirstName)
+  print(newLastName)
+  print(newEmail)
+  print(newComment)
+  #print(newTime)
 
   db = mysql.connect(host=db_host, database=db_name, user=db_user, passwd=db_pass)
   cursor = db.cursor()
-  query = "INSERT INTO guestbook (first_name, last_name, email) VALUES (%s, %s, %s)"
-  values = [new_guest['first_name'], new_guest['last_name'], new_guest['email']]
-
+  query = "INSERT INTO Guestbook (first_name, last_name, email, comment) VALUES (%s, %s, %s, %s)"
+  values = [newFirstName, newLastName, newEmail, newComment]
   cursor.execute(query, values)
   db.commit()
   db.close()
 
   return render_to_response('templates/home.html', {}, request=req)
+
+def show_guests(req):
+  db = mysql.connect(host = db_host, database = db_name, user = db_user, password=db_pass)
+  cursor = db.cursor()
+  cursor.execute("SELECT * FROM Guestbook ORDER BY ID ;" )
+  guestBook = {}
+  response = cursor.fetchall()
+   
+  guestBook['first_name'] = response[1]
+  guestBook['last_name'] = response[2]
+  guestBook['email'] = response[3]
+  guestBook['comment'] = response[4]
+  
+  db.commit()
+  response = Response(body=json.dumps(guestBook))
+  response.headers.update({'Access-Control-Allow-Origin': '*',})
+
+  return response
 
 def avatar(req):
   return {"image_src": "/pics/mclarengulf.jpg"} 
@@ -123,9 +152,9 @@ if __name__ == '__main__':
   config.add_route('add_guest', '/add_guest')
   config.add_view(add_guest, route_name='add_guest')
 
-  # route to get guests
-  #config.add_route('get_guest', '/get_guest')
-  #config.add_view(get_guest, route_name='get_guest')
+  # route to show guests
+  config.add_route('show_guests', '/show_guests')
+  config.add_view(show_guests, route_name='show_guests')
 
   # route to get avatar
   config.add_route('avatar', '/avatar')

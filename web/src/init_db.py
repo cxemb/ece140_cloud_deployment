@@ -29,6 +29,8 @@ try:
       created_at  TIMESTAMP
     );
   """)
+
+  # if implemented... add comment ^^^
 except:
   print("Guestbook table already exists. Not recreating it.")
 
