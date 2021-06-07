@@ -73,39 +73,13 @@ a:hover {
   color:steelblue;
 }
 
-.center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 50px;
-  padding: 10px;
-  border: 4px outset #93c2cc;
-  width: 40%;
-}
-
-/*city {
-  color: #c3cee6;
-  display: block;
-  width:100%;
-  text-align: center;
-  font-size: 4rem;
-  background-color: #22465D;
-  padding-bottom: 10px;
-} */
 
 div {
   padding: 1rem;
   color: lightblue;
   width: 80%;
-  text-align: center;
+  /* text-align: center; */
 }
-
-
-/*.grid {
-  padding: 3rem;
-  display: grid;
-  grid-template-columns: 4fr 1fr;
-} */
 
 
 /* Clear floats after the columns */
@@ -138,15 +112,13 @@ move {
     grid-gap: 1rem;
   }
 
-/*section {
-  align-items: center;
-}*/
-
 .box11 {
   color: var(--lightest-text-color);
   align-self: center;
   border: 4px outset var(--outline-color);
   border-radius: var(--corner-radius);
+
+  margin-top: 5rem;
 }
 
 .box12 {
@@ -154,6 +126,8 @@ move {
   align-self: center;
   border: 4px outset var(--outline-color);
   border-radius: var(--corner-radius);
+
+  margin-top: 10rem;
 }
 
 .box21 {
@@ -164,6 +138,7 @@ move {
   align-self: center;
   padding-top: 2.5rem;
   padding-bottom: 2.5rem;
+  margin-top: 5rem;
 }
 
 .dropbutton {
@@ -194,4 +169,59 @@ move {
 
 .dropdown:hover .droplinks {
   display: block;
+}
+
+.gride {
+  padding: 1rem;
+  flex: 1 0 50%;
+} 
+
+* {
+  box-sizing: border-box;
+}
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+.container {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  /*Do not forget next line, or items won't wrap*/
+  flex-wrap: wrap;
+}
+
+.item {
+  padding: 1rem;
+  flex: 1 0 100%;
+}
+
+.dropitem {
+  padding: .75rem;
+  flex: 1 0 100%;
+}
+
+/* .left {
+  background-color: blue;
+}
+.right {
+  background-color: grey;
+} */
+
+/*Layout changes on screen width 700px*/
+@media(min-width: 700px) {
+  .item { 
+    flex: 1 0 50%;
+  }
+  .dropitem { 
+    flex: 1 0 50%;
+  }
+  .box11 {
+    margin-top: 2rem;
+  }
+  
+  .box12 {
+    margin-top: 2rem;
+  }
 }
