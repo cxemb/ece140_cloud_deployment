@@ -44,6 +44,9 @@ def about(req):
 def cv(req):
   return render_to_response('templates/cv.html', {}, request=req)
 
+def class140(req):
+  return render_to_response('templates/class.html', {}, request=req)
+
 def add_guest(req):
   new_guest = req.json_body
   print(new_guest)
@@ -174,7 +177,11 @@ if __name__ == '__main__':
 
   # route to get project
   config.add_route('project', '/project')
-  config.add_view(project, route_name='project', renderer='json')  
+  config.add_view(project, route_name='project', renderer='json') 
+
+  # route to get class
+  config.add_route('class140', '/class140')
+  config.add_view(class140, route_name='class140', renderer='json')  
 
   config.add_static_view(name='/', path='./public', cache_max_age=3600)
 

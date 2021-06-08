@@ -26,6 +26,13 @@ body {
   text-align: center;
 }*/
 
+/* html {
+  -moz-filter: grayscale(100%);
+  -webkit-filter: grayscale(100%);
+  filter: gray; 
+  filter: grayscale(100%);
+} */
+
 h1 {
   color: var(--lightest-text-color);
   font-size: 10rem;
@@ -181,35 +188,6 @@ body, html {
 } */
 
 /*Layout changes on screen width 700px*/
-
-.box11 {
-  color: var(--lightest-text-color);
-  align-self: center;
-  border: 4px outset var(--outline-color);
-  border-radius: var(--corner-radius);
-
-  margin-top: 5rem;
-}
-
-.box12 {
-  color: var(--lightest-text-color);
-  align-self: center;
-  border: 4px outset var(--outline-color);
-  border-radius: var(--corner-radius);
-
-  margin-top: 10rem;
-}
-
-.box21 {
-  align-self: center;
-}
-
-.box22 {
-  align-self: center;
-  padding-top: 2.5rem;
-  padding-bottom: 2.5rem;
-  margin-top: 5rem;
-}
 
 :root {
   --page-color: #0E2F44;
@@ -370,7 +348,7 @@ body, html {
 
 .container {
   width: 100%;
-  height: 100%;
+  height: 50%;
   display: flex;
   /*Do not forget next line, or items won't wrap*/
   flex-wrap: wrap;
@@ -410,7 +388,7 @@ body, html {
   border: 4px outset var(--outline-color);
   border-radius: var(--corner-radius);
 
-  margin-top: 10rem;
+  margin-top: 5rem;
 }
 
 .box21 {
@@ -419,14 +397,15 @@ body, html {
 
 .box22 {
   align-self: center;
-  padding-top: 2.5rem;
+  /* padding-top: 2.5rem; */
   padding-bottom: 2.5rem;
-  margin-top: 5rem;
 }
 
+
+/* for iPhone X */
 @media only screen 
-    and (max-width: 360px) 
-    and (max-height: 800px) {
+    and (max-width: 375px) 
+    and (max-height: 812px) {
   .item { 
     flex: 1 0 50%;
   }
@@ -477,9 +456,10 @@ body, html {
   .dropdown {
     margin-top: -5rem;
   }
-} 
+}
 
-/* @media only screen and (max-width: 320px){
+/* for iPad */
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait) {
   .item { 
     flex: 1 0 50%;
   }
@@ -509,9 +489,11 @@ body, html {
   }
 
   h1 {
-    font-size: 5rem;
+    font-size: 2rem;
     margin-bottom: 1.5rem;
     margin-top: 5rem;
+    margin-left: -10rem;
+    margin-right: -10rem;
   }
 
   .dropbutton {
@@ -528,4 +510,8 @@ body, html {
   .dropdown {
     margin-top: -5rem;
   }
-} */
+}
+
+/* desktop is how we've had before */
+@media only screen and (min-device-width: 992px) {
+}

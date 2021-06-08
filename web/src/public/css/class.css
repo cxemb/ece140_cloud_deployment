@@ -1,0 +1,512 @@
+:root {
+    --page-color: #0E2F44;
+    --lightest-text-color: aliceblue;
+    --light-text-color: #D7EFFF;
+    --accent-color: #091E2C;
+    --corner-radius: 10px;
+    --big-padding: 1rem;
+    --med-padding: 0.66rem;
+    --outline-color: #93C2CC;
+    
+  }
+  
+  body {
+    background-color: var(--page-color);
+    font-family: Rockwell;
+    color: var(--lightest-text-color);
+    padding: 1rem;
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  
+  h1 {
+    color: var(--lightest-text-color);
+    font-size: 10rem;
+    background-color: var(--accent-color);
+    text-align: center;
+  }
+  
+  h2 {
+    text-align: center;
+  }
+  
+  h3 {
+    color: var(--lightest-text-color);
+  }
+  
+  
+  th {
+    padding: 15px;
+    text-align: center;
+  }
+  
+  a {
+    background-color: var(--accent-color);
+    border-radius: var(--corner-radius);
+    padding: var(--med-padding) var(--big-padding);
+  }
+  
+  .tablee a {
+    background-color: none;
+    border-radius: none;
+    padding: none;
+  }
+  
+  /* unvisited link */
+  a:link {
+    color: var(--light-text-color);
+    text-decoration: none;
+  }
+  
+  /* visited link */
+  a:visited {
+    color:seagreen;
+  }
+  
+  /* mouse over link */
+  a:hover {
+    color:steelblue;
+  }
+  
+  
+  div {
+    padding: 1rem;
+    color: lightblue;
+    width: 80%;
+    /* text-align: center; */
+  }
+  
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Closable button inside the container tab */
+  .closebtn {
+    float: right;
+    color: #CEDBE3;
+    font-size: 35px;
+    cursor: pointer;
+  }
+  
+  move {
+    display: block;
+    width: 50%;
+    margin: auto;
+    padding-left: 150px;
+  }
+  
+  .grid {
+      padding: 3rem;
+      display: grid;
+      grid-template-rows: 50px;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 1rem;
+    }
+  
+  .dropbutton {
+    background-color: var(--accent-color);
+    border: 4px outset var(--outline-color);
+    border-radius: var(--corner-radius);
+    color: var(--lightest-text-color);
+    font-size: 30px;
+    padding: 16px;
+    font-family: Rockwell;
+    width: 50%;
+  }
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .droplinks {
+    display: none;
+    position: absolute;
+  }
+  
+  .dropdown-content a {
+    display: block;
+  }
+  
+  
+  .dropdown:hover .droplinks {
+    display: block;
+  }
+  
+  .gride {
+    padding: 1rem;
+    flex: 1 0 50%;
+  } 
+  
+  * {
+    box-sizing: border-box;
+  }
+  body, html {
+    height: 100%;
+    margin: 0;
+  }
+  
+  .container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    /*Do not forget next line, or items won't wrap*/
+    flex-wrap: wrap;
+  }
+  
+  .item {
+    padding: 1rem;
+    flex: 1 0 50%;
+  }
+  
+  .dropitem {
+    padding: .75rem;
+    flex: 1 0 100%;
+  }
+  
+  /* .left {
+    background-color: blue;
+  }
+  .right {
+    background-color: grey;
+  } */
+  
+  /*Layout changes on screen width 700px*/
+  
+  :root {
+    --page-color: #0E2F44;
+    --lightest-text-color: aliceblue;
+    --light-text-color: #D7EFFF;
+    --accent-color: #091E2C;
+    --corner-radius: 10px;
+    --big-padding: 1rem;
+    --med-padding: 0.66rem;
+    --outline-color: #93C2CC;
+    
+  }
+  
+  body {
+    background-color: var(--page-color);
+    font-family: Rockwell;
+    color: var(--lightest-text-color);
+    padding: 1rem;
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  
+  /*mid {
+    padding-top: 3rem;
+    display: block;
+    color: #c3cee6;
+    text-align: center;
+  }*/
+  
+  
+  h2 {
+    text-align: center;
+  }
+  
+  h3 {
+    color: var(--lightest-text-color);
+  }
+  
+  
+  th {
+    padding: 15px;
+    text-align: center;
+  }
+  
+  
+  .center {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  a {
+    background-color: var(--accent-color);
+    border-radius: var(--corner-radius);
+    font-size: 1.5rem;
+  }
+  
+  /* unvisited link */
+  a:link {
+    color: var(--light-text-color);
+    text-decoration: none;
+  }
+  
+  /* visited link */
+  a:visited {
+    color:seagreen;
+  }
+  
+  /* mouse over link */
+  a:hover {
+    color:steelblue;
+  }
+  
+  
+  div {
+    padding: 1rem;
+    color: lightblue;
+    width: 80%;
+    /* text-align: center; */
+  }
+  
+  td {
+    height:50px;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Closable button inside the container tab */
+  .closebtn {
+    float: right;
+    color: #CEDBE3;
+    font-size: 35px;
+    cursor: pointer;
+  }
+  
+  move {
+    display: block;
+    width: 50%;
+    margin: auto;
+    padding-left: 150px;
+  }
+  
+  .grid {
+      padding: 3rem;
+      display: grid;
+      grid-template-rows: 50px;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 1rem;
+    }
+  
+  .drop
+  {
+    background-color: var(--accent-color);
+    border: 4px outset var(--outline-color);
+    border-radius: var(--corner-radius);
+    color: var(--lightest-text-color);
+    font-size: 30px;
+    padding: 16px;
+    font-family: Rockwell;
+    width: 50%;
+  }
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .droplinks {
+    display: none;
+    position: absolute;
+  }
+  
+  .dropdown-content a {
+    display: block;
+  }
+  
+  
+  .dropdown:hover .droplinks {
+    display: block;
+  }
+  
+  .gride {
+    padding: 1rem;
+    flex: 1 0 50%;
+  } 
+  
+  * {
+    box-sizing: border-box;
+  }
+  body, html {
+    height: 100%;
+    margin: 0;
+  }
+  
+  .container {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    /*Do not forget next line, or items won't wrap*/
+    flex-wrap: wrap;
+  }
+  
+  .item {
+    padding: 1rem;
+    flex: 1 0 50%;
+  }
+  
+  .dropitem {
+    padding: .75rem;
+    flex: 1 0 100%;
+  }
+  
+  .homebox {
+      margin-top: 5%;
+      margin-left: 50%;
+  }
+  
+  tr {
+    color: var(--page-color);
+  }
+  
+  /* .left {
+    background-color: blue;
+  }
+  .right {
+    background-color: grey;
+  } */
+  
+  /*Layout changes on screen width 700px*/
+  
+  .box11 {
+    color: var(--lightest-text-color);
+    align-self: center;
+    border: 4px outset var(--outline-color);
+    border-radius: var(--corner-radius);
+  
+    margin-top: 5rem;
+  }
+  
+  .box12 {
+    color: var(--lightest-text-color);
+    align-self: center;
+    border: 4px outset var(--outline-color);
+    border-radius: var(--corner-radius);
+  
+    margin-top: 5rem;
+  }
+  
+  .box21 {
+    align-self: center;
+  }
+  
+  .box22 {
+    align-self: center;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+    /* margin-top: 5rem; */
+  }
+  
+  
+  /* for iPhone X */
+  @media only screen 
+      and (max-width: 375px) 
+      and (max-height: 812px) {
+    .item { 
+      flex: 1 0 50%;
+    }
+    .dropitem { 
+      flex: 1 0 50%;
+      padding: .75rem;
+      margin-top: .25rem;
+    }
+    .box11 {
+      margin-top: 3rem;
+    }
+    
+    .box12 {
+      margin-top: 9rem;
+    }
+  
+    .box21 {
+      padding-top: 7rem;
+    }
+  
+    .box22 {
+      padding-top: 3rem;
+    }
+  
+    .container {
+      height: 10%;
+    }
+  
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      margin-top: 5rem;
+      margin-left: -10rem;
+      margin-right: -10rem;
+    }
+  
+    .dropbutton {
+      font-size: 1rem;
+      padding: 3px;
+      width: 75%;
+    }
+  
+    .dropitem {
+      font-size: 1rem;
+      flex: 1 0 50%;
+      margin: -4rem;
+    }
+    .dropdown {
+      margin-top: -5rem;
+    }
+  }
+  
+  /* for iPhone X */
+  /* @media only screen 
+      and (max-width: 768px) {
+    .item { 
+      flex: 1 0 50%;
+    }
+    .dropitem { 
+      flex: 1 0 50%;
+      padding: .75rem;
+      margin-top: .25rem;
+    }
+    .box11 {
+      margin-top: 3rem;
+    }
+    
+    .box12 {
+      margin-top: 9rem;
+    }
+  
+    .box21 {
+      padding-top: 7rem;
+    }
+  
+    .box22 {
+      padding-top: 3rem;
+    }
+  
+    .container {
+      height: 10%;
+    }
+  
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      margin-top: 5rem;
+      margin-left: -10rem;
+      margin-right: -10rem;
+    }
+  
+    .dropbutton {
+      font-size: 1rem;
+      padding: 3px;
+      width: 75%;
+    }
+  
+    .dropitem {
+      font-size: 1rem;
+      flex: 1 0 50%;
+      margin: -4rem;
+    }
+    .dropdown {
+      margin-top: -5rem;
+    }
+  }  */
