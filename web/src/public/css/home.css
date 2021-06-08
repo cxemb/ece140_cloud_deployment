@@ -425,8 +425,8 @@ body, html {
 }
 
 @media only screen 
-    and (device-width : 375px) 
-    and (device-height : 812px) {
+    and (max-width: 375px) 
+    and (max-height: 812px) {
   .item { 
     flex: 1 0 50%;
   }
